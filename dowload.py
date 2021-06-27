@@ -1,5 +1,4 @@
 
-import urllib.request as remote
 import os
 import requests
 
@@ -16,4 +15,5 @@ def download(bitrate, edition, start=1, end=6236):
         res = requests.get(f'https://cdn.islamic.network/quran/audio/{bitrate}/{edition}/{ayah}.mp3', headers = user_agent)
         open(f'{bitrate}/{edition}/{ayah}.mp3', 'wb').write(res.content)
 
+# TODO: change الشيخ here:
 download(64, 'ar.husary', 1, 8)
